@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FinGenius - Financial Advice Chatbot</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}">
 </head>
 <body>
-    About Page
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'chatbot' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 </body>
+
+<footer>
+    <p>&copy; 2024 FinGenius - Your Financial Assistant</p>
+</footer>
+
 </html>
