@@ -1,0 +1,168 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Header navigation styling */
+header nav ul {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    list-style-type: none;
+    background-color: #23ad51; /* Green background */
+    padding: 10px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li.login {
+    margin-left: auto; /* Push the login link to the right */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    color: #0f0f0f; /* Darker color on hover */
+    font-weight: bold;
+}
+
+/* Main content styling */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Chatbot container */
+.chatbot-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.chatbox {
+    width: 100%;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.chatbox-messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.chatbox-messages p {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00aced; /* Change button hover color */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Set a max width for the form */
+    margin: 20px auto; /* Center the form horizontally */
+}
+
+
+
+/* Label styling */
+.form-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input field styling */
+.form-control {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Button styling */
+.btn {
+    background-color: #23ad51; /* Use the same green as header */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.btn:hover {
+    background-color: #1a8e39; /* Darker shade on hover */
+}
+
+/* Help text styling */
+.form-text {
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+}
+

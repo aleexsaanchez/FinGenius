@@ -1,2 +1,52 @@
-<h2>FinGenius - Financial Chatbot</h2>
-<p>Where the chatbot is</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinGenius - Financial Advice Chatbot</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'chatbot' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+
+    <main>
+        <section class="intro">
+            <h1>Welcome to FinGenius</h1>
+            <p>Your personal financial assistant, here to help you make smarter decisions with your money. Ask FinGenius anything, from budgeting tips to investment advice.</p>
+        </section>
+
+        <section class="chatbot-container">
+            <div class="chatbox">
+                <div class="chatbox-messages" id="chatbox-messages">
+                    <p><strong>FinGenius:</strong> Hi there! How can I assist you with your finances today?</p>
+                </div>
+
+                <form id="chatbot-form">
+                    <input type="text" id="user-input" placeholder="Type your message here..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FinGenius - Your Financial Assistant</p>
+    </footer>
+
+
+</body>
+</html>

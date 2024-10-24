@@ -21,6 +21,8 @@ from chatbot import views as chatbot_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/login', auth_views.LoginView.as_view(), name='login'),
+    path('login', auth_views.LoginView.as_view(), name='login'),
     path('chatbot/', chatbot_views.chatview, name='chatbot'),
+    path('about/', chatbot_views.aboutview, name='about'),
+    path('feedback/', chatbot_views.feedbackview, name='feedback'),
 ]

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinGenius - Financial Advice Chatbot</title>
-
     {% load static %}
     <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}">
 </head>
@@ -21,38 +20,9 @@
         </nav>
     </header>
 
-    <body>
-        <h2 class="login">Login</h2>
-        <form method="post">
-            {% csrf_token %}
-            
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" required>
-            </div>
-    
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            
-            <button type="submit">Login</button>
-        </form>
-        
-        {% if next %}
-            <p>Redirected from: {{ next }}</p>
-        {% endif %}
-    </body>
-    
-
-
-   
-
     <footer>
         <p>&copy; 2024 FinGenius - Your Financial Assistant</p>
     </footer>
 
-
 </body>
 </html>
-
