@@ -48,5 +48,38 @@
     </footer>
 
 
+
+
+    <script>
+        const chatbotForm = document.getElementById('chatbot-form');
+        const userInput = document.getElementById('user-input');
+        const chatboxMessages = document.getElementById('chatbox-messages');
+    
+        chatbotForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userMessage = userInput.value;
+    
+            // Display user message in chatbox
+            chatboxMessages.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+            userInput.value = '';
+    
+            // Send message to the server
+            const response = await fetch('', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: `user_input=${encodeURIComponent(userMessage)}`
+            });
+            const data = await response.json();
+    
+            // Display bot response
+            chatboxMessages.innerHTML += `<p><strong>FinGenius:</strong> ${data.response}</p>`;
+            chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+        });
+    </script>
+    
+
 </body>
 </html>
