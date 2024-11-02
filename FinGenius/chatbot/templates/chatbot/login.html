@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'chatbot' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" required class="form-input">
+            
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" required class="form-input">
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        {% if error %}
+            <div class="error-message">{{ error }}</div>
+        {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="success-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        
+        <p>Don't have an account? <a href="{% url 'register' %}" class="btn">Register here</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} FinGenius. All rights reserved.</p>
+    </footer>
+</body>
+</html>

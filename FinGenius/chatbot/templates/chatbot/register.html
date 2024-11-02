@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinGenius - Financial Advice Chatbot</title>
-
+    <title>FinGenius - Register</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}">
 </head>
 <body>
-
     <header>
         <nav>
             <ul>
@@ -21,38 +19,18 @@
         </nav>
     </header>
 
-    <body>
-        <h2 class="login-h2">Login</h2>
+    <main>
+        <h2 class="register-h2">Register</h2>
         <form method="post">
             {% csrf_token %}
-            
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" required>
-            </div>
-    
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            
-            <button type="submit">Login</button>
+            {{ form.as_p }}  <!-- Render the form fields -->
+            <button type="submit" class="btn">Register</button>
         </form>
-        
-        {% if next %}
-            <p>Redirected from: {{ next }}</p>
-        {% endif %}
-    </body>
-    
-
-
-   
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </main>
 
     <footer>
         <p>&copy; 2024 FinGenius - Your Financial Assistant</p>
     </footer>
-
-
 </body>
 </html>
-

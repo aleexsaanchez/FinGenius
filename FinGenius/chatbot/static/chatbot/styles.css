@@ -19,6 +19,7 @@ header nav ul {
     list-style-type: none;
     background-color: #23ad51; /* Green background */
     padding: 10px;
+    border-radius: 5px; /* Rounded corners for the navbar */
 }
 
 header nav ul li {
@@ -86,18 +87,33 @@ p {
     margin-bottom: 10px;
 }
 
+/* Form styling */
 form {
     display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Set a max width for the form */
+    margin: 20px auto; /* Center the form horizontally */
 }
 
+/* Input field styling */
 input {
     flex: 1;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-right: 10px;
+    margin-bottom: 10px; /* Space between input fields */
+    transition: border 0.3s;
 }
 
+input:focus {
+    border-color: #23ad51; /* Change border color on focus */
+}
+
+/* Button styling */
 button {
     padding: 10px 20px;
     background-color: #333;
@@ -105,6 +121,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -118,34 +135,13 @@ footer {
     color: #333;
 }
 
-/* Form styling */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Set a max width for the form */
-    margin: 20px auto; /* Center the form horizontally */
-}
-
-
-
 /* Label styling */
 .form-label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Input field styling */
-.form-control {
-    width: 100%; /* Full width */
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
-/* Button styling */
+/* Button styling for register/login */
 .btn {
     background-color: #23ad51; /* Use the same green as header */
     color: white;
@@ -153,6 +149,7 @@ form {
     font-size: 16px;
     font-weight: bold;
     margin-left: 5%;
+    padding: 10px 20px; /* Consistent padding */
 }
 
 .btn:hover {
@@ -166,4 +163,50 @@ form {
     font-weight: bold;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column; /* Stack nav items on small screens */
+        padding: 5px;
+    }
 
+    header nav ul li {
+        margin: 5px 0; /* Adjust margin for stacked items */
+    }
+
+    h1 {
+        font-size: 28px; /* Reduce heading size for smaller screens */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    .chatbox {
+        width: 90%; /* Allow more width on smaller screens */
+    }
+
+    form {
+        padding: 15px; /* Reduce form padding */
+    }
+
+    input, button {
+        font-size: 14px; /* Adjust font size for input and buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Further reduce heading size for mobile */
+    }
+
+    .btn {
+        font-size: 14px; /* Smaller button text */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+.functionalities-heading {
+    margin-bottom: 15px; /* Add space below the heading */
+    font-size: 24px; /* Adjust font size if needed */
+    color: #333; /* Same color as other headings */
+}
