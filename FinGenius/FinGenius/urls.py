@@ -27,4 +27,5 @@ urlpatterns = [
     path('about/', chatbot_views.aboutview, name='about'),
     path('feedback/', chatbot_views.feedbackview, name='feedback'),
     path('register', chatbot_views.register_view, name='register'),
+    path('profile/', chatbot_views.profile_view, name='profile'),
 ]

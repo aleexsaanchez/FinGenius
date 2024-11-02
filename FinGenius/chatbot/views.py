@@ -13,6 +13,7 @@ def chatview(request):
 
     if not request.user.is_authenticated:
         messages.info(request, "You need to log in to access the Chatbot!")
+        print('it gets it')
         return redirect('login')
 
     if request.method == "POST":
@@ -63,6 +64,10 @@ def register_view(request):
     return render(request, 'chatbot/register.html', {'form': form})
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect('profile')
+
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -80,6 +85,11 @@ def login_view(request):
             return render(request, 'chatbot/login.html', {'error': 'Invalid credentials'})
 
     return render(request, 'chatbot/login.html')
+
+@login_required
+def profile_view(request):
+    return render(request, 'chatbot/profile.html', {'user': request.user})
+
 
 
 

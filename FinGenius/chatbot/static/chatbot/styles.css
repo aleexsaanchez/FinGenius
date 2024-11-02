@@ -141,20 +141,6 @@ footer {
     font-weight: bold;
 }
 
-/* Button styling for register/login */
-.btn {
-    background-color: #23ad51; /* Use the same green as header */
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 5%;
-    padding: 10px 20px; /* Consistent padding */
-}
-
-.btn:hover {
-    background-color: #1a8e39; /* Darker shade on hover */
-}
 
 /* Help text styling */
 .form-text {

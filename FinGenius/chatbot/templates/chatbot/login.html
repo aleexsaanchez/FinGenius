@@ -1,50 +1,49 @@
-{% load static %}
+<!-- chatbot/templates/chatbot/login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}"> 
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'chatbot' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Login</h2>
-        <form method="POST">
-            {% csrf_token %}
-            <label for="username" class="form-label">Username:</label>
-            <input type="text" name="username" required class="form-input">
-            
-            <label for="password" class="form-label">Password:</label>
-            <input type="password" name="password" required class="form-input">
-            
-            <button type="submit" class="btn">Login</button>
-        </form>
-
-        {% if error %}
-            <div class="error-message">{{ error }}</div>
-        {% endif %}
+    
+    <body>
+        <!-- Navbar -->
+        {% include 'chatbot/navbar.html' %}
+    
+        <!-- Messages Section -->
         {% if messages %}
+        <div class="messages">
             {% for message in messages %}
-                <div class="success-message">{{ message }}</div>
+                <div class="alert {{ message.tags }}">{{ message }}</div>
             {% endfor %}
+        </div>
         {% endif %}
-        
-        <p>Don't have an account? <a href="{% url 'register' %}" class="btn">Register here</a></p>
-    </main>
+    
+        <!-- Main Content -->
+        <main>
+            {% if not user.is_authenticated %}
+                <h2>Login</h2>
+                <form method="POST" class="login-form">
+                    {% csrf_token %}
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" name="username" required class="form-input">
+                    
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" name="password" required class="form-input">
+                    
+                    <button type="submit" class="btn login-btn">Login</button>
+                </form>
+                <p class="register-link">Don't have an account? <a href="{% url 'register' %}" class="btn">Register here</a></p>
+            {% else %}
+                <h2>Welcome, {{ user.username }}!</h2>
+                <p>This is your profile page.</p>
+            {% endif %}
+        </main>
+    </body>
+    
 
-    <footer>
-        <p>&copy; {{ current_year }} FinGenius. All rights reserved.</p>
-    </footer>
 </body>
 </html>

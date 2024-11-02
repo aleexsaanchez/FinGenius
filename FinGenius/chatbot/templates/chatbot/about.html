@@ -8,16 +8,8 @@
     <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'chatbot' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'feedback' %}">Feedback</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    
+    {%include 'chatbot/navbar.html'%}
 
     <main>
         <section class="about-section">
