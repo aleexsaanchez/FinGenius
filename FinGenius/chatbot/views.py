@@ -2,7 +2,7 @@ import openai
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -89,6 +89,10 @@ def login_view(request):
 @login_required
 def profile_view(request):
     return render(request, 'chatbot/profile.html', {'user': request.user})
+
+def logout_view(request):
+    logout(request)
+    return redirect('chatbot')
 
 
 

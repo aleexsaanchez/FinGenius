@@ -17,6 +17,12 @@
         <p>Username: {{ user.username }}</p>
     </main>
 
+    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    
+
     <footer>
         <p>&copy; 2024 FinGenius - Your Financial Assistant</p>
     </footer>
