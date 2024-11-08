@@ -1,18 +1,24 @@
-/* General reset */
-* {
+/* ============================
+   General Reset
+   ============================ */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* ============================
+   Body Styling
+   ============================ */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
 }
 
-/* Header navigation styling */
+/* ============================
+   Header Navigation Styling
+   ============================ */
 header nav ul {
     display: flex;
     justify-content: flex-start; /* Align items to the left */
@@ -41,7 +47,9 @@ header nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Main content styling */
+/* ============================
+   Main Content Styling
+   ============================ */
 main {
     max-width: 800px;
     margin: 20px auto;
@@ -59,7 +67,9 @@ p {
     margin-bottom: 20px;
 }
 
-/* Chatbot container */
+/* ============================
+   Chatbot Container Styling
+   ============================ */
 .chatbot-container {
     display: flex;
     justify-content: center;
@@ -87,7 +97,9 @@ p {
     margin-bottom: 10px;
 }
 
-/* Form styling */
+/* ============================
+   Form Styling
+   ============================ */
 form {
     display: flex;
     flex-direction: column; /* Stack form elements vertically */
@@ -99,7 +111,9 @@ form {
     margin: 20px auto; /* Center the form horizontally */
 }
 
-/* Input field styling */
+/* ============================
+   Input Field Styling
+   ============================ */
 input {
     flex: 1;
     padding: 10px;
@@ -113,7 +127,9 @@ input:focus {
     border-color: #23ad51; /* Change border color on focus */
 }
 
-/* Button styling */
+/* ============================
+   Button Styling
+   ============================ */
 button {
     padding: 10px 20px;
     background-color: #333;
@@ -128,28 +144,35 @@ button:hover {
     background-color: #00aced; /* Change button hover color */
 }
 
-/* Footer styling */
+/* ============================
+   Footer Styling
+   ============================ */
 footer {
     text-align: center;
     margin-top: 40px;
     color: #333;
 }
 
-/* Label styling */
+/* ============================
+   Label Styling
+   ============================ */
 .form-label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-
-/* Help text styling */
+/* ============================
+   Help Text Styling
+   ============================ */
 .form-text {
     font-size: 12px;
     color: #000000;
     font-weight: bold;
 }
 
-/* Responsive adjustments */
+/* ============================
+   Responsive Adjustments
+   ============================ */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column; /* Stack nav items on small screens */
@@ -191,8 +214,64 @@ footer {
         padding: 8px 16px; /* Adjust padding */
     }
 }
-.functionalities-heading {
-    margin-bottom: 15px; /* Add space below the heading */
-    font-size: 24px; /* Adjust font size if needed */
-    color: #333; /* Same color as other headings */
+
+/* ============================
+   Register Form Styling
+   ============================ */
+
+/* General Register Form Styling */
+form.auth-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Set a max width for the form */
+    margin: 20px auto; /* Center the form horizontally */
+}
+
+/* Input fields for register form */
+form.auth-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px; /* Space between input fields */
+    transition: border 0.3s;
+    font-size: 16px;
+}
+
+form.auth-form input:focus {
+    border-color: #23ad51; /* Change border color on focus */
+}
+
+/* Labels for register form */
+form.auth-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Submit Button for register form */
+form.auth-form button {
+    padding: 10px 20px;
+    background-color: #23ad51;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+form.auth-form button:hover {
+    background-color: #00aced; /* Change button hover color */
+}
+
+/* Error Messages in register form */
+form.auth-form .error {
+    color: #ff0000;
+    font-size: 14px;
+    margin-bottom: 10px;
 }

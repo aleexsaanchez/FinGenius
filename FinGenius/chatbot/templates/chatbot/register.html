@@ -23,7 +23,7 @@
         <h2 class="register-h2">Register</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}  <!-- Render the form fields -->
+            {{ form.as_p }}  
             <button type="submit" class="btn">Register</button>
         </form>
         <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>

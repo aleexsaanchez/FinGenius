@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from .models import Feedback
 
 openai.api_key = "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"
 
@@ -38,12 +39,22 @@ def chatview(request):
     return render(request, 'chatbot/chat.html')
 
 def feedbackview(request):
+    success_message = None  # Initialize success message variable
+
     if request.method == 'POST':
-        # Handle POST request
-        # Process user input, save feedback, etc.
-        return HttpResponse("Feedback sent!")
-    else:
-        return render(request, 'chatbot/feedback.html')
+        user_name = request.POST.get('user_name')
+        email = request.POST.get('email')
+        feedback = request.POST.get('feedback')
+
+        # Manually create a Feedback object and save it
+        new_feedback = Feedback(user_name=user_name, email=email, feedback=feedback)
+        new_feedback.save()
+
+        # Set the success message
+        success_message = "Your feedback has been submitted successfully!"
+
+    return render(request, 'chatbot/feedback.html', {'success_message': success_message})
+
     
 def aboutview(request):
     return render(request, 'chatbot/about.html')
